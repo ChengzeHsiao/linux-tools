@@ -30,7 +30,10 @@
 ```bash
 # Linux x86_64
 git clone https://github.com/ChengzeHsiao/linux-tools.git
-cd freeipa-pw-reset
+cd /linux-toools/freeipa-pw-reset
+
+# 添加执行权限
+chmod +x freeipa-password-reset
 
 ```
 ### 提前条件
