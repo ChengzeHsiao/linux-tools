@@ -100,10 +100,13 @@ kinit admin
 ```bash
 # 下载并解压
 git clone https://github.com/ChengzeHsiao/linux-tools.git
-cd freeipa-pw-reset
+cd /linux-toools/freeipa-pw-reset
+
+# 添加执行权限
+chmod +x freeipa-password-reset
 
 # 系统安装
-freeipa-password-reset --install
+./freeipa-password-reset --install
 
 # 验证安装
 freeipa-password-reset --help
@@ -114,7 +117,7 @@ freeipa-password-reset --help
 ```bash
 # 下载并解压
 git clone https://github.com/ChengzeHsiao/linux-tools.git
-cd freeipa-pw-reset
+cd /linux-toools/freeipa-pw-reset
 
 # 添加执行权限
 chmod +x freeipa-password-reset
