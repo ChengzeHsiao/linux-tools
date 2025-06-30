@@ -33,6 +33,13 @@ git clone https://github.com/ChengzeHsiao/linux-tools.git
 cd freeipa-pw-reset
 
 ```
+### 提前条件
+
+```bash
+# FreeIPA 环境
+kinit admin
+```
+
 
 ### 立即体验
 
@@ -76,7 +83,6 @@ cd freeipa-pw-reset
 | 平台 | 架构 | 状态 | 最低版本要求 |
 |------|------|------|-------------|
 | **Linux** | x86_64 | ✅ 完全支持 | GLIBC 2.3.4+ (2003+) |
-| **Linux** | ARM64 | ✅ 完全支持 | GLIBC 2.17+ |
 
 ### 兼容的 Linux 发行版
 
