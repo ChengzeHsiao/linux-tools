@@ -39,6 +39,11 @@ chmod +x freeipa-password-reset
 ### 提前条件
 
 ```bash
+# 容器环境 or 非容器环境
+  ## 容器环境
+   docker exec -it freeipa-server bash
+  ## 非容器环境
+   
 # FreeIPA 环境
 kinit admin
 ```
