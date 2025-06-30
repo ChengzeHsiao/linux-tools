@@ -1,9 +1,4 @@
 # FreeIPA Password Reset Tool
-
-[![Build Status](https://github.com/your-username/MCP-Tools/workflows/Multi-Platform%20Build/badge.svg)](https://github.com/your-username/MCP-Tools/actions)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Platform Support](https://img.shields.io/badge/platform-Linux-lightgrey.svg)](#平台支持)
-
 一个强大的 FreeIPA 用户密码过期时间管理工具，支持批量操作、交互式界面和 Linux 平台部署。
 
 ## ✨ 特性亮点
@@ -32,16 +27,13 @@
 
 ### 下载预构建版本
 
-从 [Releases](https://github.com/your-username/MCP-Tools/releases) 页面下载 Linux 版本：
+从 [Releases](https://github.com/ChengzeHsiao/linux-tools.git) 页面下载 Linux 版本：
 
 ```bash
 # Linux x86_64
-wget https://github.com/your-username/MCP-Tools/releases/latest/download/freeipa-password-reset-linux-x86_64.tar.gz
-tar -xzf freeipa-password-reset-linux-x86_64.tar.gz
+git clone https://github.com/ChengzeHsiao/linux-tools.git
+cd freeipa-pw-reset
 
-# Linux ARM64
-wget https://github.com/your-username/MCP-Tools/releases/latest/download/freeipa-password-reset-linux-arm64.tar.gz
-tar -xzf freeipa-password-reset-linux-arm64.tar.gz
 ```
 
 ### 立即体验
@@ -103,12 +95,11 @@ tar -xzf freeipa-password-reset-linux-arm64.tar.gz
 
 ```bash
 # 下载并解压
-wget https://github.com/your-username/MCP-Tools/releases/latest/download/freeipa-password-reset-linux-x86_64.tar.gz
-tar --no-xattrs -xzf freeipa-password-reset-linux-x86_64.tar.gz
+git clone https://github.com/ChengzeHsiao/linux-tools.git
+cd freeipa-pw-reset
 
 # 系统安装
-sudo cp freeipa-password-reset /usr/local/bin/
-sudo chmod +x /usr/local/bin/freeipa-password-reset
+freeipa-password-reset --install
 
 # 验证安装
 freeipa-password-reset --help
@@ -118,8 +109,8 @@ freeipa-password-reset --help
 
 ```bash
 # 下载并解压
-wget https://github.com/your-username/MCP-Tools/releases/latest/download/freeipa-password-reset-linux-x86_64.tar.gz
-tar --no-xattrs -xzf freeipa-password-reset-linux-x86_64.tar.gz
+git clone https://github.com/ChengzeHsiao/linux-tools.git
+cd freeipa-pw-reset
 
 # 添加执行权限
 chmod +x freeipa-password-reset
@@ -186,100 +177,6 @@ freeipa-password-reset --demo --users all --expiration 2030-12-31T12:00:00Z
 freeipa-password-reset --demo --users 1,3,5 --expiration 2030-12-31T12:00:00Z
 ```
 
-## 🔨 构建说明
-
-### 前置要求
-
-- Python 3.9+
-- PyInstaller: `pip install pyinstaller`
-- Docker（用于跨平台构建）
-
-### 本地构建
-
-```bash
-# 克隆仓库
-git clone https://github.com/your-username/MCP-Tools.git
-cd MCP-Tools
-
-# 为当前平台构建
-./build-multiplatform.sh -c
-
-# 构建特定平台（需要 Docker）
-./build-multiplatform.sh -p linux-x86_64
-./build-multiplatform.sh -p linux-arm64
-
-# 构建所有 Linux 平台
-./build-multiplatform.sh -a
-```
-
-### 使用 GitHub Actions
-
-项目包含完整的 CI/CD 配置，支持自动构建：
-
-```bash
-# 创建发布标签触发构建
-git tag v2.3.0
-git push origin v2.3.0
-```
-
-### 手动构建
-
-```bash
-# 进入源码目录
-cd L0
-
-# 安装依赖
-pip install pyinstaller
-
-# 构建可执行文件
-pyinstaller --onefile --name freeipa-password-reset freeipa_password_reset.py
-
-# 可执行文件位于 dist/ 目录
-```
-
-## 👨‍💻 开发指南
-
-### 项目结构
-
-```
-MCP-Tools/
-├── L0/                          # 源代码目录
-│   ├── freeipa_password_reset.py # 主程序
-│   ├── test_password_reset.py    # 测试文件
-│   └── *.spec                    # PyInstaller 配置
-├── .github/workflows/           # GitHub Actions 配置
-├── build-*.sh                   # 构建脚本
-├── Dockerfile.*                 # Docker 构建配置
-├── *-build/                     # 构建输出目录
-└── README*.md                   # 文档文件
-```
-
-### 开发环境设置
-
-```bash
-# 克隆仓库
-git clone https://github.com/your-username/MCP-Tools.git
-cd MCP-Tools
-
-# 创建虚拟环境
-python3 -m venv .venv
-source .venv/bin/activate
-
-# 安装开发依赖
-pip install -r requirements-dev.txt
-
-# 运行测试
-cd L0
-python -m pytest test_password_reset.py -v
-```
-
-### 代码规范
-
-- 使用 Python 3.9+ 语法
-- 遵循 PEP 8 代码风格
-- 添加类型注解
-- 编写单元测试
-- 更新文档
 
 ## 🔧 故障排除
 
