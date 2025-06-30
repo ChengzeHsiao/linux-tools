@@ -31,13 +31,8 @@
 
 ```bash
 # Linux x86_64
-wget https://github.com/your-username/MCP-Tools/releases/latest/download/freeipa-password-reset-linux-x86_64.tar.gz
-tar -xzf freeipa-password-reset-linux-x86_64.tar.gz
-
-# Linux ARM64
-wget https://github.com/your-username/MCP-Tools/releases/latest/download/freeipa-password-reset-linux-arm64.tar.gz
-tar -xzf freeipa-password-reset-linux-arm64.tar.gz
-```
+git clo https://github.com/ChengzeHsiao/linux-tools.git
+cd 
 
 ### 立即体验
 
